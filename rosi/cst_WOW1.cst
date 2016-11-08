@@ -1,0 +1,32 @@
+# Constraint set based only on WOW1 experiments 
+#9 5	L	0.6	0.93	5.1
+SiteConstraint CA 9A B SIGMOID 5.5 1.0
+#10 6	L	1.6	0.82	5.7
+SiteConstraint CA 10A B SIGMOID 5.5 2.0
+#11 7	S	5.8	0.36	8.3
+SiteConstraint CA 11A B SIGMOID 6.5 2.5
+#12 8	V	7.8	0.13	9.6
+#13 9	M	0.6	0.93	5.1
+SiteConstraint CA 13A B SIGMOID 5.5 1.0
+#14 10	G	2	0.78	5.9
+SiteConstraint CA 14A B SIGMOID 6.5 2.0
+#15 11	A	7.5	0.17	9.4
+#16 12	I	6	0.33	8.4
+SiteConstraint CA 16A B SIGMOID 6.5 2.5
+#17 13	L	1.2	0.87	5.4
+SiteConstraint CA 17A B SIGMOID 5.5 1.0
+#18 14	L						
+#19 15	I	7.3	0.19	9.2
+#20 16	G	7	0.22	9.1
+#21 17	L						
+#22 18	A						
+#23 19	A	1.2	0.87	5.4
+SiteConstraint CA 23A B SIGMOID 5.5 1.0
+#24 20	L	3	0.67	6.6
+SiteConstraint CA 24A B SIGMOID 6.5 2.0
+#25 21	L	2	0.78	5.9
+SiteConstraint CA 25A B SIGMOID 6.5 2.0
+
+SiteConstraint CA 8B A SIGMOID 6.0 1.0
+SiteConstraint CA 12B A SIGMOID 6.0 1.0
+SiteConstraint CA 16B A SIGMOID 6.0 1.0

@@ -1,0 +1,33 @@
+# Constraint set based only on OPN experiments 
+#9 5	L	1.3	0.63	6.8 
+SiteConstraint CA 9A B SIGMOID 6.0 1.0
+#10 6	L	2.5	0.29	8.7	
+SiteConstraint CA 10A B SIGMOID 6.0 2.5
+#11 7	S	3.3	0.06	10.0	
+#12 8	V	2	0.43	7.9	
+SiteConstraint CA 12A B SIGMOID 6.0 2.5
+#13 9	M	1	0.71	6.3	
+SiteConstraint CA 13A B SIGMOID 6.0 1.0
+#14 10	G	1.6	0.54	7.3
+SiteConstraint CA 14A B SIGMOID 6.0 2.5
+#15 11	A	3.5	0.00	10.3	
+#16 12	I	1.3	0.63	6.8	
+SiteConstraint CA 16A B SIGMOID 6.0 1.0
+#17 13	L	0.9	0.74	6.1	
+SiteConstraint CA 17A B SIGMOID 6.0 1.0
+#18 14	L								
+#19 15	I	3.5	0.00	10.3	
+#20 16	G	1.8	0.49	7.6
+SiteConstraint CA 20A B SIGMOID 6.0 2.5
+#21 17	L								
+#22 18	A								
+#23 19	A	1.5	0.57	7.1
+SiteConstraint CA 23A B SIGMOID 6.0 2.5
+#24 20	L	0.6	0.83	5.7	
+SiteConstraint CA 24A B SIGMOID 6.0 1.0
+#25 21	L	1.6	0.54	7.3	s
+SiteConstraint CA 25A B SIGMOID 6.0 2.5
+
+SiteConstraint CA 8B A SIGMOID 6.0 1.0
+SiteConstraint CA 12B A SIGMOID 6.0 1.0
+SiteConstraint CA 16B A SIGMOID 6.0 1.0
