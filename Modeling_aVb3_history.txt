@@ -1,0 +1,20 @@
+Modeling_aVb3_history.txt
+
+
+>b3 sequence
+kgp dil vvl lsv mga ill igl aal liw kll iti hdr
+# made model renumbered from 1 & chain A. Also hand made rosetta res file
+
+>  python ~/CHAMP/bin/orientHelix_rosMemV2.py  ~/CHAMP/modeling_aVb3/rosiModeling/iB3.pdb  ~/rosetta/ ~/CHAMP/bin/helix_Relax.xml ~/CHAMP/modeling_aVb3/rosiModeling/resfile
+
+# full seq:  	kgp dil vvl lsv MGa iLl iGl aal liw kll iti hdr
+# to match:		large/mid-Small-XX-mid-XX-G-mid-{XX-sm-mid}  {maybe this...}
+# regex: 		[LWMFIVLY][ASTGC]\w\w[VLIFM]\w\w[AGSTC][VLIFM]
+# indices:		12 20
+
+
+> python ~/CHAMP/bin/templatePairsScreen.py ~/CHAMP/Cluster-004/ ~/CHAMP/modeling_aVb3/bbmodels/ ~/CHAMP/modeling_aVb3/rosiModeling/iB3_0001.pdb ~/CHAMP/Cluster-004_ext/ KGPDILVVLLSVMGAILLIGLAALLIWKLLITIHDR 12 20 "[LWMFIVLY][ASTGC]\w\w[VLIFM]\w\w[AGSTC][VLIFM]"
+
+
+
+python ~/CHAMP/bin/templatePairsScreen.py ~/CHAMP/Cluster-004/ ~/CHAMP/EGFR/bbHits_Cterm /home/xray/CHAMP/EGFR/RosMem_Target-input-CTERM/alignedInput_0001.pdb ~/CHAMP/Cluster-004_ext/ PSIATGMVGALLLLLVVALGIGLFMRRRH 17 22 "[ASTG][VLIF]\w\w[ASG][VLIF]"

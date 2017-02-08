@@ -22,6 +22,7 @@
  		<AddMembraneMover name=add_memb/>
  		<MembranePositionFromTopologyMover name=init_pos/>
  		<ConstraintSetMover name=addCst cst_fa_file="%%cst_file%%"/>
+ 		
  		<PackRotamersMover name=buildSC scorefxn=memb_hires task_operations=resfile,arochi,ex1_ex2/>
  		<FastRelax name=fast_relax1 scorefxn=memb_hires_cst repeats=8 task_operations=resfile,current,arochi,ex1_ex2/>
  		<FastRelax name=fast_relax2 scorefxn=memb_hires repeats=8 task_operations=resfile,current,arochi,ex1_ex2/>
