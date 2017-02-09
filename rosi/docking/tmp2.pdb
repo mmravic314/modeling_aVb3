@@ -1,0 +1,9 @@
+REMARK AtomGroup aV_B3_apart Selection '(ca resnum 33 t...) and (chain A)' + aV_B3_apart Selection '(ca resnum 5 6 7 8) and (chain A)'
+ATOM      1  CA  ILE A  33      -2.145  -2.423 -18.363  1.00  0.00           C
+ATOM      2  CA  HIS A  34      -5.827  -3.268 -18.876  1.00  0.00           C
+ATOM      3  CA  ASP A  35      -6.265   0.102 -20.651  1.00  0.00           C
+ATOM      4  CA  ARG A  36      -2.796  -0.005 -22.307  1.00  0.00           C
+ATOM      5  CA  ILE A   5       4.618  -0.884  22.089  1.00  0.00           C
+ATOM      6  CA  LEU A   6       2.132   1.953  21.355  1.00  0.00           C
+ATOM      7  CA  VAL A   7       4.519   3.913  19.110  1.00  0.00           C
+ATOM      8  CA  VAL A   8       5.766   0.615  17.645  1.00  0.00           C

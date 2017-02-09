@@ -1,0 +1,59 @@
+Modeling_aVb3_history.txt
+
+
+>b3 sequence
+kgp dil vvl lsv mga ill igl aal liw kll iti hdr
+# made model renumbered from 1 & chain A. Also hand made rosetta res file
+
+>  python ~/CHAMP/bin/orientHelix_rosMemV2.py  ~/CHAMP/modeling_aVb3/rosiModeling/iB3.pdb  ~/rosetta/ ~/CHAMP/bin/helix_Relax.xml ~/CHAMP/modeling_aVb3/rosiModeling/resfile
+
+# full seq:  	kgp dil vvl lSV mgA Ill IGl aal liw kll iti hdr
+# to match:		Small-Mid-XX-Small-Mid/Large-XX-Mid-small
+# regex: 		[ASTGC][TVLIM]\w\w[ASTGC][VLIMF]\w\w[VLIMF][ASGC]
+# indices:		10 19
+
+
+> python ~/CHAMP/bin/templatePairsScreen.py ~/CHAMP/Cluster-004/ ~/CHAMP/modeling_aVb3/bbmodels/ ~/CHAMP/modeling_aVb3/rosiModeling/iB3_0001.pdb ~/CHAMP/Cluster-004_ext/ KGPDILVVLLSVMGAILLIGLAALLIWKLLITIHDR 10 19 "[ASTGC][TVLIM]\w\w[ASTGC][VLIMF]\w\w[VLIMF][ASGC]"
+
+
+python ~/CHAMP/bin/templatePairsScreen.py ~/CHAMP/Cluster-004/ ~/CHAMP/modeling_aVb3/bbmodels/ ~/CHAMP/modeling_aVb3/rosiModeling/iB3_0001.pdb ~/CHAMP/Cluster-004_ext/ KGPDILVVLLSVMGAILLIGLAALLIWKLLITIHDR 10 18 "[ASTGC][TVLIM]\w\w[ASTGC][VLIMF]\w\w[VLIMF]"
+* good 6,7,9,10,11,14,15,16,20
+
+python ~/CHAMP/bin/templatePairsScreen.py ~/CHAMP/Cluster-004/ ~/CHAMP/modeling_aVb3/bbmodels/ ~/CHAMP/modeling_aVb3/rosiModeling/iB3_v2.pdb ~/CHAMP/Cluster-004_ext/ KGPDILVVLLSVMGAILLIGLAALLIWKLLITIHDR 10 19 "[ASTGC][TVLIM]\w\w[ASTGC][VLIMF]\w\w[VLIMF][ASGC]"
+* good 1,2,4
+
+4kpp-001_007-0032_0058_A-0242_0267_A.pdb
+
+
+
+
+#######################################################
+########### For modeling/simulation of 2knc with aVb3 sequence
+> /home/xray/CHAMP/modeling_aVb3/thread_relax_sim_2knc
+
+# threaded has aV aligned to 2knc aIIb and B3, spanning the NMR model... with N-term cut at last R or K before TM
+> python prep_threading.py 2knc_protINPUT.pdb threaded.fasta 
+
+> python modelRelax_rosMem.py aVb3_2kncModel.pdb helix_Relax.xml ~/rosetta/
+
+# This stuck to the same interface...
+
+####################
+DOCKING   
+#####################
+
+# Makc 10 pre-packed structures from a separated 
+> aV
+PVWVIILAVLAGLLLLAVLVFVMYRMGFFKRVRP
+> B3rotate_helix.py
+KGPDILVVLLSVMGAILLIGLAALLIWKLLITIHDR
+
+# make rotations of chain A (B3) helix by 60 degrees
+rotate_helix.py
+
+
+~/rosetta/source/bin/docking_prepack_protocol.linuxgccrelease -in:file:s aV_B3_apart.pdb  -score:weights mpframework_docking_fa_2015.wts -mp:setup:spanfiles aV_B3_apart.span -mp:scoring:hbond -packing:pack_missing_sidechains 0 -partners A_B -out:overwrite -nstruct 10
+
+# then remove membrane residue from this pre-pack
+
+ ~/rosetta/source/bin/mp_dock.linuxgccrelease -in:file:s aV_B3_apart_0001.pdb  -score:weights mpframework_docking_fa_2015.wts -mp:setup:spanfiles aV_B3_apart.span -mp:scoring:hbond -packing:pack_missing_sidechains 0 -docking:partners A_B -nstruct 12 -overwrite
